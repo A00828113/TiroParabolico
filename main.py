@@ -1,3 +1,8 @@
+# Codigo de Juego de Tiro Parabólico
+# Proósito: Seguir con una aplicación de juegos que maneja la física  como  inteligencia con un grado de
+# dificultad aún mayor y requiere de cambios para hacer un juego más retador e interminable.
+# Se agregaron las funcionalidades de: hacer el juego interminable; aumentar la velocidad de proyectil y targets
+# Autores: Monserrat Da Costa Gomez y Abraham Cepeda
 from random import randrange
 from turtle import *
 from freegames import vector
@@ -6,6 +11,10 @@ ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
+# La función se llama tap
+# parametro de entrada: x (int), y (int)
+# parametro de salida: N/A (no regresa valores)
+# Descripcion: Responde al tap en la pantalla y lanza el proyectil a la velocidad indicada (la cual fue modificada a la original)
 def tap(x, y):
     "Respond to screen tap."
     if not inside(ball):
@@ -32,13 +41,18 @@ def draw():
 
     update()
 
+# La función se llama move
+# parametro de entrada: N/A
+# parametro de salida: N/A 
+# Descripcion: controla el movimiento de los targets y la pelota, los rangos de movimiento, velocidad, etc..
 def move():
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
-
+    
+    # Indica cuanto se mueve en el eje x los targets (bolas azules)
     for target in targets:
         target.x -= 1.5
 
