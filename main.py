@@ -23,10 +23,18 @@ def tap(x, y):
         speed.x = (x + 550) / 25
         speed.y = (y + 550) / 25
 
+# La función se llama inside
+# parametro de entrada: xy (vector)
+# parametro de salida: bool
+# Descripcion: Revisa que el vector se encuentre dentro de los limites del programa
 def inside(xy):
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
+# La función se llama draw
+# parametro de entrada: N/A
+# parametro de salida: N/A (no regresa valores)
+# Descripcion: Genera las bolas azules y rojas
 def draw():
     "Draw ball and targets."
     clear()
